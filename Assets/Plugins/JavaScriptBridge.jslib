@@ -1,6 +1,6 @@
 mergeInto(LibraryManager.library, {
 
-	ShowMessage: function(message) {
+	SetBackgroundColor: function(message) {
 		window.document.body.style.backgroundColor = Pointer_stringify(message);
 	},
 	

@@ -11,7 +11,7 @@ public class CSBridge : MonoBehaviour
 
 #if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal")]
-    private static extern void ShowMessage(string message);
+    private static extern void SetBackgroundColor(string message);
 
     [DllImport("__Internal")]
     private static extern void CloseWindow();
@@ -24,6 +24,7 @@ public class CSBridge : MonoBehaviour
         WebGLInput.captureAllKeyboardInput = false;
 #endif
     }
+
     public void LoadWayneStateMainPage()
     {
         Application.OpenURL("http://Wayne.edu/");
@@ -32,7 +33,7 @@ public class CSBridge : MonoBehaviour
     public void SendBackgroundColorToJS(string message)
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-    ShowMessage(message);
+    SetBackgroundColor(message);
 #endif
     }
 
